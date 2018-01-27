@@ -5,9 +5,82 @@ module.exports = {
   main: function(req, res, next) {
     res.redirect('/landingPage');
   },
+
   lndg: function(req, res) {
     knex('workers').then((result)=>{
     res.render('landingPage', {workers: result})
+  })
+  .catch((err)=>{
+    console.error(err)
+  });
+},
+
+  admin: function(req, res) {
+    knex('admins').then((result)=>{
+    res.render('AdminAccount', {admins: result})
+  })
+  .catch((err)=>{
+    console.error(err)
+  });
+},
+
+  ca: function(req, res) {
+    knex('workers').then((result)=>{
+    res.render('CandidateAccount', {workers: result})
+  })
+  .catch((err)=>{
+    console.error(err)
+  });
+},
+
+  cp: function(req, res) {
+    knex('workers').then((result)=>{
+    res.render('CandidateProfile', {workers: result})
+  })
+  .catch((err)=>{
+    console.error(err)
+  });
+},
+
+  ea: function(req, res) {
+    knex('employers').then((result)=>{
+    res.render('EmployerAccount', {employers: result})
+  })
+  .catch((err)=>{
+    console.error(err)
+  });
+},
+
+  jp: function(req, res) {
+    knex('jobs').then((result)=>{
+    res.render('JobProfile', {jobs: result})
+  })
+  .catch((err)=>{
+    console.error(err)
+  });
+},
+
+  js: function(req, res) {
+    knex('jobs').then((result)=>{
+    res.render('JobSearch', {jobs: result})
+  })
+  .catch((err)=>{
+    console.error(err)
+  });
+},
+
+  sign: function(req, res) {
+    knex('workers').then((result)=>{
+    res.render('SignUp', {workers: result})
+  })
+  .catch((err)=>{
+    console.error(err)
+  });
+},
+
+  ws: function(req, res) {
+    knex('workers').then((result)=>{
+    res.render('WorkerSearch', {workers: result})
   })
   .catch((err)=>{
     console.error(err)
