@@ -24,6 +24,7 @@ module.exports = {
   });
 },
 
+
   ca: function(req, res) {
     knex('workers').then((result)=>{
     res.render('CandidateAccount', {workers: result})
