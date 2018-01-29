@@ -15,18 +15,19 @@ module.exports = {
   });
 },
 
-/*  admin: function(req, res) {
+  admin: function(req, res) {
     knex('admins')
     .where('id', req.params.id)
     .then((result)=>{
+      console.log("hitting the admin route");
     res.render('AdminAccount', {admins: result[0]})
   })
   .catch((err)=>{
     console.error(err)
   });
-},*/
+},
 
-admin: function(req, res) {
+/*admin: function(req, res) {
   knex('admins')
   .then((result)=>{
   res.render('AdminAccount', {admins: result})
@@ -34,30 +35,37 @@ admin: function(req, res) {
 .catch((err)=>{
   console.error(err)
 });
-},
+},*/
 
 
   ca: function(req, res) {
-    knex('workers').then((result)=>{
-    res.render('CandidateAccount', {workers: result})
+    knex('workers')
+    .where('id', req.params.id)
+    .then((result)=>{
+    res.render('CandidateAccount', {workers: result[0]})
   })
   .catch((err)=>{
     console.error(err)
   });
 },
 
-  cp: function(req, res) {
-    knex('workers').then((result)=>{
-    res.render('CandidateProfile', {workers: result})
-  })
-  .catch((err)=>{
-    console.error(err)
-  });
+cp: function(req, res) {
+  knex('workers')
+  .where('id', req.params.id)
+  .then((result)=>{
+  res.render('CandidateProfile', {workers: result[0]})
+})
+.catch((err)=>{
+  console.error(err)
+});
 },
+
 
   ea: function(req, res) {
-    knex('employers').then((result)=>{
-    res.render('EmployerAccount', {employers: result})
+    knex('employers')
+    .where('id', req.params.id)
+    .then((result)=>{
+    res.render('EmployerAccount', {employers: result[0]})
   })
   .catch((err)=>{
     console.error(err)
@@ -65,8 +73,10 @@ admin: function(req, res) {
 },
 
   jp: function(req, res) {
-    knex('jobs').then((result)=>{
-    res.render('JobProfile', {jobs: result})
+    knex('jobs')
+    .where('id', req.params.id)
+    .then((result)=>{
+    res.render('JobProfile', {jobs: result[0]})
   })
   .catch((err)=>{
     console.error(err)
