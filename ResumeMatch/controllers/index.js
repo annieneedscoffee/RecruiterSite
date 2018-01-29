@@ -15,13 +15,25 @@ module.exports = {
   });
 },
 
-  admin: function(req, res) {
-    knex('admins').then((result)=>{
-    res.render('AdminAccount', {admins: result})
+/*  admin: function(req, res) {
+    knex('admins')
+    .where('id', req.params.id)
+    .then((result)=>{
+    res.render('AdminAccount', {admins: result[0]})
   })
   .catch((err)=>{
     console.error(err)
   });
+},*/
+
+admin: function(req, res) {
+  knex('admins')
+  .then((result)=>{
+  res.render('AdminAccount', {admins: result})
+})
+.catch((err)=>{
+  console.error(err)
+});
 },
 
 
