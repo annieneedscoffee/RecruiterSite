@@ -101,6 +101,23 @@ cp: function(req, res) {
   });
 },
 
+  create: function(req, res){
+    console.log(req.body)
+    knex('workers')
+    .insert({
+      email: req.body.email,
+      password: req.body.password
+    })
+    .then((result)=>{
+      console.log(result)
+      console.log(req.headers)
+    })
+    .then(res.redirect('/landingPage'))
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
   ws: function(req, res) {
     knex('workers').then((result)=>{
     res.render('WorkerSearch', {workers: result})

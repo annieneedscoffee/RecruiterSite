@@ -11,5 +11,6 @@ module.exports = function(app){
     app.get('/JobProfile/:id', index.jp);
     app.get('/JobSearch', index.js);
     app.get('/SignUp', index.sign);
+    app.post('/NewWorker', index.create);
     app.get('/WorkerSearch', index.ws);
 }
