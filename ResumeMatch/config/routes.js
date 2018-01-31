@@ -6,6 +6,7 @@ module.exports = function(app){
     app.get('/landingPage', index.lndg);
     app.get('/AdminAccount/:id', index.admin);
     app.get('/CandidateAccount/:id', index.ca);
+    app.post('/EditWorker/:id', index.edcand);
     app.get('/CandidateProfile/:id', index.cp);
     app.get('/EmployerAccount/:id', index.ea);
     app.get('/JobProfile/:id', index.jp);

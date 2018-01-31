@@ -252,27 +252,71 @@
             <div class="card">
               <div class="card-content">
                 <span class="card-title">Profile</span>
+                  <form action="/EditWorker/:id" method="post">
+                  <p>Candidate ID Number: <%= workers.id%></p>
                 <p><strong>Location: </strong><%= workers.location%></p>
+                <div class="input-field col s12">
+                <input name="location" placeholder="Location" id="location" type="text" class="validate">
+                </div>
               </br>
-                <p><strong>Willing to Relocate: </strong><%= workers.relocate%></p>
+                <p><strong>Willing to Relocate (enter true or false): </strong><%= workers.relocate%></p>
+                <div class="input-field col s12">
+                <input name="relocate" placeholder="Relocate" id="relocate" type="text" class="validate">
+                </div>
                   </br>
                 <p><strong>Experience: </strong><%= workers.experience%> years</p>
+                <div class="input-field col s12">
+                <input name="experience" placeholder="Experience" id="experience" type="text" class="validate">
+                </div>
                   </br>
                 <p><strong>Certifications: </strong><%= workers.certifications%></p>
+                <div class="input-field col s12">
+                <input name="certifications" placeholder="Certifications" id="certifications" type="text" class="validate">
+                </div>
                   </br>
                 <p><strong>Licensing: </strong><%= workers.license%></p>
+                <div class="input-field col s12">
+                <input name="license" placeholder="License" id="license" type="text" class="validate">
+                </div>
                   </br>
                 <p><strong>Degrees: </strong><%= workers.degrees%></p>
+                <div class="input-field col s12">
+                <input name="degrees" placeholder="Degrees" id="degrees" type="text" class="validate">
+                </div>
                   </br>
                 <p><strong>Skills: </strong><%= workers.skills%></p>
+                <div class="input-field col s12">
+                <input name="skills" placeholder="Skills" id="skills" type="text" class="validate">
+                </div>
               </br>
-              <p><strong>Username: </strong><%= workers.username%></p>
+              <p><strong>Username (displayed as title on resume): </strong><%= workers.username%></p>
+              <div class="input-field col s12">
+              <input name="username" placeholder="Username" id="username" type="text" class="validate">
+              </div>
             </br>
             <p><strong>Password: </strong>*******</p>
+            <div class="input-field col s12">
+            <input name="password" placeholder="Password" id="password" type="text" class="validate">
+            </div>
           </br>
           <p><strong>Phone: </strong><%= workers.phone%></p>
+          <div class="input-field col s12">
+          <input name="phone" placeholder="Phone" id="phone" type="text" class="validate">
+          </div>
         </br>
         <p><strong>Email: </strong><%= workers.email%></p>
+        <div class="input-field col s12">
+        <input name="email" placeholder="Email" id="email" type="text" class="validate">
+        </div>
+        <p><strong>ID Number: </strong><%= workers.id%></p>
+        <div class="input-field col s12">
+        <input name="worker" placeholder="Worker ID Number" id="worker" type="text" class="validate">
+        </div>
+      </br>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+<i class="material-icons right">send</i>
+</button>
+      </form>
       </br>
             </br>
     </div>

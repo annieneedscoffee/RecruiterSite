@@ -49,6 +49,32 @@ module.exports = {
   });
 },
 
+  edcand: function(req, res){
+    let candid = req.body.worker
+    knex('workers')
+    .where('id', candid)
+    .update({
+      location: req.body.location,
+      relocate: req.body.relocate,
+      experience: req.body.experience,
+      certifications: req.body.certifications,
+      license: req.body.license,
+      degrees: req.body.degrees,
+      skills: req.body.skills,
+      username: req.body.username,
+      password: req.body.password,
+      phone: req.body.phone,
+      email: req.body.email,
+      id: req.body.worker
+    })
+    .then((result)=>{
+      res.redirect(`/CandidateAccount/${candid}`)
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
 cp: function(req, res) {
   knex('workers')
   .where('id', req.params.id)
