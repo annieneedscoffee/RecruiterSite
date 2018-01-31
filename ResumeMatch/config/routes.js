@@ -12,6 +12,7 @@ module.exports = function(app){
     app.get('/JobSearch', index.js);
     app.get('/SignUp', index.sign);
     app.post('/NewWorker', index.create);
+    app.post('/LogWorker', index.logw);
     app.post('/NewEmployer', index.newemp);
     app.get('/WorkerSearch', index.ws);
 }

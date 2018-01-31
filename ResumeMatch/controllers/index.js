@@ -118,6 +118,19 @@ cp: function(req, res) {
     });
   },
 
+  logw: function(req, res){
+    knex('workers')
+    .where('email', req.body.email)
+    .then((result)=>{
+      let worker = result[0];
+      let workid = result[0].id;
+      if(worker.password === req.body.password){
+        res.redirect(`/CandidateAccount/${workid}`);
+      }
+
+    })
+  },
+
   newemp: function(req, res){
     console.log(req.body)
     knex('employers')
