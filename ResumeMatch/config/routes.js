@@ -15,5 +15,6 @@ module.exports = function(app){
     app.post('/LogWorker', index.logw);
     app.post('/NewEmployer', index.newemp);
     app.post('/LogEmployer', index.loge);
+    app.post('/NewJob', index.newjob);
     app.get('/WorkerSearch', index.ws);
 }

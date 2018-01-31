@@ -161,6 +161,26 @@ cp: function(req, res) {
     })
   },
 
+  newjob: function(req, res){
+    let empid = req.body.company
+    knex('jobs')
+    .insert({
+      location: req.body.location,
+      experience: req.body.experience,
+      certifications: req.body.certifications,
+      licensing: req.body.licensing,
+      degrees: req.body.degrees,
+      skills: req.body.skills,
+      description: req.body.description,
+      company: req.body.company
+    })
+    .then(res.redirect(`/EmployerAccount/${empid}`))
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
+
   ws: function(req, res) {
     knex('workers').then((result)=>{
     res.render('WorkerSearch', {workers: result})
