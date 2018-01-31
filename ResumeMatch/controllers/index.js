@@ -75,6 +75,29 @@ module.exports = {
     });
   },
 
+  edemp: function(req, res){
+    let employid = req.body.employer
+    console.log(req.body.employer)
+    knex('employers')
+    .where('id', employid)
+    .update({
+      locations: req.body.locations,
+      company: req.body.company,
+      cp: req.body.cp,
+      username: req.body.username,
+      password: req.body.password,
+      phone: req.body.phone,
+      email: req.body.email,
+      id: req.body.employer
+    })
+    .then((result)=>{
+      res.redirect(`/EmployerAccount/${employid}`)
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
 cp: function(req, res) {
   knex('workers')
   .where('id', req.params.id)

@@ -9,6 +9,7 @@ module.exports = function(app){
     app.post('/EditWorker/:id', index.edcand);
     app.get('/CandidateProfile/:id', index.cp);
     app.get('/EmployerAccount/:id', index.ea);
+    app.post('/EditEmployer/:id', index.edemp);
     app.get('/JobProfile/:id', index.jp);
     app.get('/JobSearch', index.js);
     app.get('/SignUp', index.sign);

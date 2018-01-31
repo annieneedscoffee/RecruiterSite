@@ -312,19 +312,53 @@
         <div class="card">
           <div class="card-content">
             <span class="card-title">Profile</span>
+              <form action="/EditEmployer/:id" method="post">
+                <p>Employer ID Number: <%= employers.id%></p>
+              </br>
             <p><strong>Company: </strong><%= employers.company%></p>
+            <div class="input-field col s12">
+            <input name="company" placeholder="Company" id="company" type="text" class="validate">
+            </div>
           </br>
           <p><strong>Contact Person: </strong><%= employers.cp%></p>
+          <div class="input-field col s12">
+          <input name="cp" placeholder="Contact Person" id="cp" type="text" class="validate">
+          </div>
         </br>
             <p><strong>Locations: </strong><%= employers.locations%></p>
+            <div class="input-field col s12">
+            <input name="locations" placeholder="Locations" id="locations" type="text" class="validate">
+            </div>
           </br>
           <p><strong>Username: </strong><%= employers.username%></p>
+          <div class="input-field col s12">
+          <input name="username" placeholder="Username" id="username" type="text" class="validate">
+          </div>
         </br>
         <p><strong>Password: </strong>********</p>
+        <div class="input-field col s12">
+        <input name="password" placeholder="Password" id="password" type="text" class="validate">
+        </div>
       </br>
       <p><strong>Phone: </strong><%= employers.phone%></p>
+      <div class="input-field col s12">
+      <input name="phone" placeholder="Phone" id="phone" type="text" class="validate">
+      </div>
     </br>
     <p><strong>Email: </strong><%= employers.email%></p>
+    <div class="input-field col s12">
+    <input name="email" placeholder="Email" id="email" type="text" class="validate">
+    </div>
+  </br>
+  <p><strong>Company ID Number: </strong><%= employers.id%></p>
+  <div class="input-field col s12">
+  <input name="employer" placeholder="Company ID Number" id="employer" type="text" class="validate">
+  </div>
+</br>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+<i class="material-icons right">send</i>
+</button>
+  </form>
   </br>
         </br>
 </div>
