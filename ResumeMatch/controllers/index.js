@@ -148,6 +148,19 @@ cp: function(req, res) {
     });
   },
 
+  loge: function(req, res){
+    knex('employers')
+    .where('email', req.body.email)
+    .then((result)=>{
+      let employer = result[0];
+      let empid = result[0].id;
+      if(employer.password === req.body.password){
+        res.redirect(`/EmployerAccount/${empid}`);
+      }
+
+    })
+  },
+
   ws: function(req, res) {
     knex('workers').then((result)=>{
     res.render('WorkerSearch', {workers: result})
