@@ -98,6 +98,7 @@ module.exports = {
     });
   },
 
+
 cp: function(req, res) {
   knex('workers')
   .where('id', req.params.id)
